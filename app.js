@@ -20,16 +20,6 @@ questions = [
         "answer": "D"
     },
     {
-        "question": "How do you select all elements of a specific type in CSS?",
-        "choices": [
-            "type",
-            "*type",
-            ".type",
-            "type"
-        ],
-        "answer": "A"
-    },
-    {
         "question": "How do you set the font family in CSS?",
         "choices": [
             "font: family;",
@@ -148,6 +138,16 @@ questions = [
             "@id"
         ],
         "answer": "B"
+    },
+    {
+        "question": "What is the CSS selector used to select an element based on its class?",
+        "choices": [
+            ".id",
+            "#id",
+            "id",
+            "@id"
+        ],
+        "answer": "A"
     },
     {
         "question": "What is the default value for the CSS display property?",
@@ -352,8 +352,9 @@ function sound(src) {
     this.sound.src = src;
     this.sound.setAttribute("preload", "auto");
     this.sound.setAttribute("controls", "true");
+    // this.sound.setAttribute("controls", "none");
     this.sound.volume = .1
-    // this.sound.style.display = "none";
+    this.sound.style.display = "none";
     document.body.appendChild(this.sound);
     this.play = function () {
         this.sound.play();
@@ -495,9 +496,10 @@ function selectChoice(e) {
 
 var playerStart = Math.floor(Math.random(1) * 2) + 1
 
-// var audio = document.getElementById("myAudio");
+var audio = document.getElementById("myAudio");
 // audio.volume = 0.5; // set volume to 50%
-bgSound.loop = true
-bgSound.play();
+// bgSound.loop = true
+audio.volume = .2
+audio.play();
 // nGame.style.display = "none"
 startGame()
