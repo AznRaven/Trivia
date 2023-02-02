@@ -505,4 +505,5 @@ var playerStart = Math.floor(Math.random(1) * 2) + 1
 // audio.volume = .2
 bgSound.play();
 // nGame.style.display = "none"
+// hello
 startGame()
