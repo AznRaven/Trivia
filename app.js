@@ -354,6 +354,7 @@ function sound(src) {
     this.sound.setAttribute("controls", "true");
     // this.sound.setAttribute("controls", "none");
     this.sound.volume = .1
+    this.sounc.loop = true
     // this.sound.style.display = "none";
     document.body.appendChild(this.sound);
     this.play = function () {
