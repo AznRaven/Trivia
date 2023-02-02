@@ -27,7 +27,9 @@ body {
 .answerA,
 .answerB,
 .answerC,
-.answerD {
+.answerD,
+.green,
+.red {
     display: flex;
     border-radius: 15px 50px 30px;
     /* border: 4px solid red; */
@@ -43,7 +45,7 @@ body {
     font-family: Arial Black;
     
 }
-.answerA {
+.answerA, .red {
     border-image: linear-gradient(to right, red, white, red) 1;
     background-image: linear-gradient(red, white, red);
     text-shadow: 1px 1px 10px black, 1px 1px 1px black, 1px 1px 1px black, 1px 1px 1px black;
@@ -63,13 +65,13 @@ body {
 
 }
 
-.answerD {
+.answerD, .green {
     border-image: linear-gradient(to right, green, white, green) 1;
     background-image: linear-gradient(green, white, green);
     text-shadow: 1px 1px 10px black, 1px 1px 1px black, 1px 1px 1px black, 1px 1px 1px black;
 
 }
-.answerDiv {
+.answerDiv, .newGame {
     /* border: 3px solid blue; */
     display: flex;
     align-items: flex-end;
@@ -147,6 +149,7 @@ body {
     background-image: linear-gradient(purple, pink, purple);
     text-shadow: 10px 0 10px purple, 0 1px 0 purple, 0 10px 10px purple, 10px 10px 10px purple;
 }
+ 
 nav {
     border: 1px solid black;
     height: 10vh;
@@ -157,4 +160,7 @@ nav {
     display: flex;
     background-image: linear-gradient(black, grey, black);
 
+}
+.newGame {
+    display: none;
 }

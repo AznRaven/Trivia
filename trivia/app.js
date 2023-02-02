@@ -331,7 +331,8 @@ var p1D = document.querySelector('.player1D')
 var p2D = document.querySelector('.player2D')
 var player1 = document.querySelector('.player1')
 var player2 = document.querySelector('.player2')
-// var x = document.querySelector('.question')
+var winner = document.querySelector('.ask')
+var nGame = document.querySelector('.newGame')
 var answer = ''
 var selectedAnswer = ''
 var l = document.querySelector('.l')
@@ -344,6 +345,7 @@ var winSound = new sound("win.mp3")
 var rSound = new sound("right.mp3")
 var wSound = new sound("wrong.mp3")
 var bgSound = new sound("bg1.mp3")
+var backupArray = questions
 
 function sound(src) {
     this.sound = document.createElement("audio");
@@ -361,58 +363,54 @@ function sound(src) {
 }
 
 function startGame() {
-    // pTurn.innerHTML = "hello"
     var audio = document.getElementById("myAudio");
     audio.volume = 0.5; // set volume to 50%
     audio.play();
-    // log.innerHTML = (`length: ${questions.length} p1: ${p1points} p2: ${p2points}`)
-    // log.innerHTML = playerStart
     if (questions.length == 1 && p1points > p2points) {
-        document.querySelector('.question').style.display = "none"
-        pTurn.innerHTML = 'Player 1 Wins!!!'
+        // document.querySelector('.question').style.display = "none"
+        winner.innerHTML = 'Player 1 Wins!!!'
+        ansDiv.children[2].remove()
+        ansDiv.children[2].remove()
+        ansDiv.children[0].innerHTML = 'Yes'
+        ansDiv.children[1].innerHTML = 'No'
+        nGame.style.display = "block"
         winSound.play()
+        nGame.style.display = "block"
         p1points = 0
         p2points = 0
+        p1p.innerHTML = 0
+        p2p.innerHTML = 0
+        questions = backupArray
         // setTimeout(startGame, 5000)
         process.exit()
 
     } else if (questions.length == 1 && p2points > p1points) {
-        document.querySelector('.question').style.display = "none"
-        pTurn.innerHTML = 'Player 2 Wins!!!'
+        // document.querySelector('.question').style.display = "none"
+        winner.innerHTML = 'Player 2 Wins!!!'
+        ansDiv.children[2].remove()
+        ansDiv.children[2].remove()
+        ansDiv.children[0].innerHTML = 'Yes'
+        ansDiv.children[1].innerHTML = 'No'
         winSound.play()
         p1points = 0
         p2points = 0
+        p1p.innerHTML = 0
+        p2p.innerHTML = 0
+        questions = backupArray
         // setTimeout(startGame, 5000)
         process.exit()
     }
     if (playerStart == 1) {
-        // pTurn.innerHTML = "Player 1's Turn "
-        // p1D.style.border = "10px /'
-        // p1D.style.borderRadius  = "50px "
         p1D.style.border = "5px solid green"
         p2D.style.border = ""
-        // p2D.style.borderRadius  = "50px "
-        // p2D.style.backgroundColor = "pink"
     } else {
         p1D.style.border = ""
         p2D.style.border = "5px solid green"
-        // pTurn.innerHTML = "Player 2's Turn"
-        // p2D.style.border = "10px solid green"
-        // p1D.style.border = ""
-        // p2D.style.borderRadius  = "50px "
-        // p2D.style.backgroundColor = "green"
-        // p1D.style.borderRadius  = "50px "
-        // p1D.style.backgroundColor = "pink"
     }
-    // pTurn.innerHTML += questions.length
-    // randomize index for question
     index = Math.floor(Math.random() * questions.length)
 
     // show question to html
     document.querySelector('.ask').textContent = `"${questions[index].question}"`
-
-    // show answer on screen
-    // win.innerHTML = questions[index].answer
 
     answer = questions[index].answer
     // clear answer
@@ -420,7 +418,6 @@ function startGame() {
 
     //show choices to html
     for (let i = 0; i < 4; i++) {
-        // log.innerHTML += &lt;br> ${questions[index].choices[i]}`
         let addLetter = ''
         i == 0 ? addLetter = 'A' :
             i == 1 ? addLetter = 'B' :
@@ -431,44 +428,6 @@ function startGame() {
         ansDiv.innerHTML += `<p class="answer${addLetter} ${addLetter}">${addLetter} - ${questions[index].choices[i]}</p>`
     }
 
-    // ansDiv.addEventListener('click', selectChoice)
-
-    // function selectChoice(e) {
-
-    //     if (e.target.tagName == 'P') {
-    //         // console.log(e.target.className)
-    //         // console.log(e.target.classList.contains(answer))
-    //         l.innerHTML += '<br>'
-    //         r.innerHTML += '<br>'
-    // for (let i = 0; i < questions.length; i++) {
-    //     l.innerHTML += `<br> ${questions[i].question}`
-    // }
-    //         questions.splice(index, 1)
-    //         for (let i = 0; i < questions.length; i++) {
-    //             r.innerHTML += &lt;br> ${questions[i].question}`
-    //         }
-
-    //         // remove used question
-
-    //         // e.target.classList.contains(answer) ? startGame(playerStart) : startGame(!playerStart)
-    //     } else {
-    //         return
-    //     }
-
-
-
-    // }
-    // log.innerHTML = questions.length
-    // log.innerHTML += index
-    // for(let i = 0; i < questions.length; i++){
-    //     l.innerHTML += &lt;br> ${questions[i].question}`
-    // }
-    // // remove used question
-    // questions.splice(index, 1)
-    // for(let i = 0; i < questions.length; i++){
-    //     r.innerHTML += &lt;br> ${questions[i].question}`
-    // }
-    // log.innerHTML += questions.length
 }
 
 ansDiv.addEventListener('click', selectChoice)
@@ -476,21 +435,17 @@ ansDiv.addEventListener('click', selectChoice)
 function selectChoice(e) {
 
     if (e.target.tagName == 'P') {
-        // console.log(e.target.className)
-        // console.log(e.target.classList.contains(answer))
-        // l.innerHTML += '<br>'
-        // r.innerHTML += '<br>'
-        // for (let i = 0; i < questions.length; i++) {
-        //     l.innerHTML += &lt;br> ${questions[i].question}`
-        // }
 
-        // remove used question
         questions.splice(index, 1)
-
-        // for (let i = 0; i < questions.length; i++) {
-        //     r.innerHTML += &lt;br> ${questions[i].question}`
-        // }
-
+        if(e.target.innerHTML == "Yes") {
+            location.reload();
+        }else if(e.target.innerHTML == "No"){
+            location.reload();
+        }else{
+            null
+        }
+        
+        
         if (e.target.classList.contains(answer)) {
             playerStart = playerStart
             e.target.style.border = "green"
@@ -516,11 +471,8 @@ function selectChoice(e) {
 
         p1p.innerHTML = `${p1points}`
         p2p.innerHTML = `${p2points}`
-        // e.target.classList.contains(answer) ? startGame(playerStart) : startGame(!playerStart)
 
-        // win.innerHTML = 'hi'
         setTimeout(startGame, 2500)
-        // startGame(playerStart)
     } else {
         return
     }
@@ -532,4 +484,5 @@ var playerStart = Math.floor(Math.random(1) * 2) + 1
 var audio = document.getElementById("myAudio");
 audio.volume = 0.5; // set volume to 50%
 audio.play();
+// nGame.style.display = "none"
 startGame()
