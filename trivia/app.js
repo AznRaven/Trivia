@@ -341,9 +341,9 @@ var counter = 0
 var index = 0
 var p1points = 0
 var p2points = 0
-var winSound = new sound("win.mp3")
-var rSound = new sound("right.mp3")
-var wSound = new sound("wrong.mp3")
+var winSound = new soundOnly("win.mp3")
+var rSound = new soundOnly("right.mp3")
+var wSound = new soundOnly("wrong.mp3")
 var bgSound = new sound("bg1.mp3")
 var backupArray = questions
 
@@ -351,7 +351,23 @@ function sound(src) {
     this.sound = document.createElement("audio");
     this.sound.src = src;
     this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "true");
+    this.sound.volume = .1
+    // this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function () {
+        this.sound.play();
+    }
+    this.stop = function () {
+        this.sound.pause();
+    }
+}
+function soundOnly(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
     this.sound.setAttribute("controls", "none");
+    this.sound.volume = .1
     this.sound.style.display = "none";
     document.body.appendChild(this.sound);
     this.play = function () {
@@ -364,8 +380,6 @@ function sound(src) {
 
 function startGame() {
     var audio = document.getElementById("myAudio");
-    audio.volume = 0.5; // set volume to 50%
-    audio.play();
     if (questions.length == 1 && p1points > p2points) {
         // document.querySelector('.question').style.display = "none"
         winner.innerHTML = 'Player 1 Wins!!!'
@@ -481,8 +495,8 @@ function selectChoice(e) {
 
 var playerStart = Math.floor(Math.random(1) * 2) + 1
 
-var audio = document.getElementById("myAudio");
-audio.volume = 0.5; // set volume to 50%
-audio.play();
+// var audio = document.getElementById("myAudio");
+// audio.volume = 0.5; // set volume to 50%
+bgSound.play();
 // nGame.style.display = "none"
 startGame()

@@ -14,6 +14,7 @@ body {
     opacity: 0.8;
     background-size: cover;
 }
+
 .ask {
     display: flex;
     justify-content: space-around;
@@ -24,6 +25,7 @@ body {
     justify-content: center;
     background-color: white;
 }
+
 .answerA,
 .answerB,
 .answerC,
@@ -43,9 +45,11 @@ body {
     /* margin: 10px; */
     font-size: 4vh;
     font-family: Arial Black;
-    
+
 }
-.answerA, .red {
+
+.answerA,
+.red {
     border-image: linear-gradient(to right, red, white, red) 1;
     background-image: linear-gradient(red, white, red);
     text-shadow: 1px 1px 10px black, 1px 1px 1px black, 1px 1px 1px black, 1px 1px 1px black;
@@ -65,13 +69,16 @@ body {
 
 }
 
-.answerD, .green {
+.answerD,
+.green {
     border-image: linear-gradient(to right, green, white, green) 1;
     background-image: linear-gradient(green, white, green);
     text-shadow: 1px 1px 10px black, 1px 1px 1px black, 1px 1px 1px black, 1px 1px 1px black;
 
 }
-.answerDiv, .newGame {
+
+.answerDiv,
+.newGame {
     /* border: 3px solid blue; */
     display: flex;
     align-items: flex-end;
@@ -81,6 +88,7 @@ body {
     /* align-items: flex-end; */
     margin-top: 10vh;
 }
+
 .container {
     display: flex;
     /* gap: 100px; */
@@ -105,9 +113,14 @@ body {
     /* border-image: linear-gradient(to right, darkblue, darkorchid) 1; */
 
 }
-.player1, .player2, .p1p, .p2p {
+
+.player1,
+.player2,
+.p1p,
+.p2p {
     font-size: 4vh;
 }
+
 /* .player1D {
     border: 5px solid red;
 } */
@@ -126,14 +139,17 @@ body {
     text-shadow: 1px 1px 10px black, 1px 1px 1px black, 1px 1px 1px black, 1px 1px 1px black;
 
 }
+
 .title {
     font-size: 5vh;
     /* margin-left: 50%; */
     border: 4px solid red;
 }
+
 .question {
     width: 100%;
 }
+
 .title {
     display: flex;
     align-items: center;
@@ -149,7 +165,12 @@ body {
     background-image: linear-gradient(purple, pink, purple);
     text-shadow: 10px 0 10px purple, 0 1px 0 purple, 0 10px 10px purple, 10px 10px 10px purple;
 }
- 
+
+audio {
+    width: 400px;
+    height: 50px;
+}
+
 nav {
     border: 1px solid black;
     height: 10vh;
@@ -161,6 +182,7 @@ nav {
     background-image: linear-gradient(black, grey, black);
 
 }
+
 .newGame {
     display: none;
 }
