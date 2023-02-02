@@ -5,35 +5,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AznRaven's Trivia</title>
     <link rel="stylesheet" href="style.css">
+
     <script defer src="app.js"></script>
 </head>
 
 <body>
-    <div class="top">
+    <nav class="top">
         <div class="player1D">
-            <h2>Player 1</h2>
+            <p class="player1">Player 1</p>
             <p class="p1p">Points:</p>
         </div>
-        <div class="turn">
-        </div>
+
+        <div class="title">AznRaven's Trivia</div>
+
         <div class="player2D">
-            <h2>Player 2</h2>
+            <p class="player2">Player 2</p>
             <p class="p2p">Points:</p>
         </div>
-    </div>
-    <h3>AznRaven's Trivia</h1>
+    </nav>
+
     <div class="container">
-        
+
         <div class="win">
         </div>
-        <!-- <div class="turn">
-        </div> -->
         <div class="log">
         </div>
-        
+
     </div>
+
     <div class="question">
         <h1 class="ask">Question</h1>
 
@@ -51,13 +52,12 @@
     </div>
     <audio id="myAudio">
         <source src="bg1.mp3" type="audio/mpeg">
-        <button id="btnPlay">Play</button>  
-        <button id="btnPause">Pause</button>  
-        <button id="btnStop">Stop</button>  
-        <input type="range" id="rngVolume" min="0" max="1" step=".01" value=".5"/>  
+        <!-- <button id="btnPlay">Play</button>
+        <button id="btnPause">Pause</button>
+        <button id="btnStop">Stop</button>
+        <input type="range" id="rngVolume" min="0" max="1" step=".01" value=".5" /> -->
     </audio>
 
 </body>
 
 </html>
-

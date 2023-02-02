@@ -329,6 +329,8 @@ var p1p = document.querySelector('.p1p')
 var p2p = document.querySelector('.p2p')
 var p1D = document.querySelector('.player1D')
 var p2D = document.querySelector('.player2D')
+var player1 = document.querySelector('.player1')
+var player2 = document.querySelector('.player2')
 // var x = document.querySelector('.question')
 var answer = ''
 var selectedAnswer = ''
@@ -359,7 +361,7 @@ function sound(src) {
 }
 
 function startGame() {
-    pTurn.innerHTML = "hello"
+    // pTurn.innerHTML = "hello"
     var audio = document.getElementById("myAudio");
     audio.volume = 0.5; // set volume to 50%
     audio.play();
@@ -384,21 +386,23 @@ function startGame() {
         process.exit()
     }
     if (playerStart == 1) {
-        pTurn.innerHTML = "Player 1's Turn "
-        // p1D.style.border = "10px solid green"
+        // pTurn.innerHTML = "Player 1's Turn "
+        // p1D.style.border = "10px /'
+        // p1D.style.borderRadius  = "50px "
+        p1D.style.border = "5px solid green"
         p2D.style.border = ""
-        p1D.style.borderRadius  = "50px "
-        p1D.style.backgroundColor = "green"
-        p2D.style.borderRadius  = "50px "
-        p2D.style.backgroundColor = "pink"
+        // p2D.style.borderRadius  = "50px "
+        // p2D.style.backgroundColor = "pink"
     } else {
-        pTurn.innerHTML = "Player 2's Turn"
-        // p2D.style.border = "10px solid green"
         p1D.style.border = ""
-        p2D.style.borderRadius  = "50px "
-        p2D.style.backgroundColor = "green"
-        p1D.style.borderRadius  = "50px "
-        p1D.style.backgroundColor = "pink"
+        p2D.style.border = "5px solid green"
+        // pTurn.innerHTML = "Player 2's Turn"
+        // p2D.style.border = "10px solid green"
+        // p1D.style.border = ""
+        // p2D.style.borderRadius  = "50px "
+        // p2D.style.backgroundColor = "green"
+        // p1D.style.borderRadius  = "50px "
+        // p1D.style.backgroundColor = "pink"
     }
     // pTurn.innerHTML += questions.length
     // randomize index for question
@@ -525,10 +529,6 @@ function selectChoice(e) {
 
 var playerStart = Math.floor(Math.random(1) * 2) + 1
 
-// coin == 1 ? playerStart = true : playerStart = false
-
-// bgSound.play()
-// bgSound.volume = 0.5
 var audio = document.getElementById("myAudio");
 audio.volume = 0.5; // set volume to 50%
 audio.play();
