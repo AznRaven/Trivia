@@ -380,7 +380,7 @@ function soundOnly(src) {
 }
 
 function startGame() {
-    audio.play();
+    bgSound.play();
     if (questions.length == 1 && p1points > p2points) {
         // document.querySelector('.question').style.display = "none"
         winner.innerHTML = 'Player 1 Wins!!!'
