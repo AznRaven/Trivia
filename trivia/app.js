@@ -376,10 +376,10 @@ function startGame() {
         nGame.style.display = "block"
         winSound.play()
         nGame.style.display = "block"
-        p1points = 0
-        p2points = 0
-        p1p.innerHTML = 0
-        p2p.innerHTML = 0
+        // p1points = 0
+        // p2points = 0
+        // p1p.innerHTML = 0
+        // p2p.innerHTML = 0
         questions = backupArray
         // setTimeout(startGame, 5000)
         process.exit()
@@ -392,11 +392,10 @@ function startGame() {
         ansDiv.children[0].innerHTML = 'Yes'
         ansDiv.children[1].innerHTML = 'No'
         winSound.play()
-        p1points = 0
-        p2points = 0
-        p1p.innerHTML = 0
-        p2p.innerHTML = 0
-        questions = backupArray
+        // p1points = 0
+        // p2points = 0
+        // p1p.innerHTML = 0
+        // p2p.innerHTML = 0
         // setTimeout(startGame, 5000)
         process.exit()
     }
@@ -440,7 +439,9 @@ function selectChoice(e) {
         if(e.target.innerHTML == "Yes") {
             location.reload();
         }else if(e.target.innerHTML == "No"){
-            location.reload();
+            ansDiv.children[0].remove()
+            ansDiv.children[0].remove()
+            winner.innerHTML = "Thanks For Playing"
         }else{
             null
         }
@@ -477,7 +478,6 @@ function selectChoice(e) {
         return
     }
 }
-
 
 var playerStart = Math.floor(Math.random(1) * 2) + 1
 
