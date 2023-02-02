@@ -380,7 +380,7 @@ function soundOnly(src) {
 }
 
 function startGame() {
-    var audio = document.getElementById("myAudio");
+    audio.play();
     if (questions.length == 1 && p1points > p2points) {
         // document.querySelector('.question').style.display = "none"
         winner.innerHTML = 'Player 1 Wins!!!'
@@ -390,6 +390,7 @@ function startGame() {
         ansDiv.children[1].innerHTML = 'No'
         nGame.style.display = "block"
         winSound.play()
+        audio.play();
         nGame.style.display = "block"
         // p1points = 0
         // p2points = 0
@@ -407,6 +408,7 @@ function startGame() {
         ansDiv.children[0].innerHTML = 'Yes'
         ansDiv.children[1].innerHTML = 'No'
         winSound.play()
+        audio.play();
         // p1points = 0
         // p2points = 0
         // p1p.innerHTML = 0
