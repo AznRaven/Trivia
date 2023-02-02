@@ -498,10 +498,10 @@ function selectChoice(e) {
 
 var playerStart = Math.floor(Math.random(1) * 2) + 1
 
-var audio = document.getElementById("myAudio");
+// var audio = document.getElementById("myAudio");
 // audio.volume = 0.5; // set volume to 50%
 // bgSound.loop = true
-audio.volume = .2
-audio.play();
+// audio.volume = .2
+bgSound.play();
 // nGame.style.display = "none"
 startGame()
