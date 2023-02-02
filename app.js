@@ -414,11 +414,11 @@ function startGame() {
         process.exit()
     }
     if (playerStart == 1) {
-        p1D.style.border = "5px solid green"
+        p1D.style.border = "5px solid #ff3a20"
         p2D.style.border = ""
     } else {
         p1D.style.border = ""
-        p2D.style.border = "5px solid green"
+        p2D.style.border = "5px solid #ff3a20"
     }
     index = Math.floor(Math.random() * questions.length)
 
