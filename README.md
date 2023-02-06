@@ -13,3 +13,6 @@ The game continues until all questions have been answered.
 The player with the most points at the end of the game wins.
 Start playing now and see how much you know about CSS, JS, and HTML!
 
+## Future Changes
+- Split questions into categories. CSS, Js, HTML so you can study on section you need.
+- Add timer when selecting choices.
