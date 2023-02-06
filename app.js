@@ -380,6 +380,7 @@ function soundOnly(src) {
     }
 }
 
+// Start Game Function
 function startGame() {
     // winner.style.display = "none"
     bgSound.play();
@@ -449,6 +450,7 @@ function startGame() {
 
 }
 
+// Event Listener to Choices
 ansDiv.addEventListener('click', selectChoice)
 
 function selectChoice(e) {
@@ -499,13 +501,8 @@ function selectChoice(e) {
     }
 }
 
+// Start Game with random player
 var playerStart = Math.floor(Math.random(1) * 2) + 1
 
-// var audio = document.getElementById("myAudio");
-// audio.volume = 0.5; // set volume to 50%
-// bgSound.loop = true
-// audio.volume = .2
 bgSound.play();
-// nGame.style.display = "none"
-// hello
 startGame()
