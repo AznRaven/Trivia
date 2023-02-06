@@ -381,6 +381,7 @@ function soundOnly(src) {
 }
 
 function startGame() {
+    // winner.style.display = "none"
     bgSound.play();
     if (questions.length == 1 && p1points > p2points) {
         // document.querySelector('.question').style.display = "none"
@@ -408,6 +409,7 @@ function startGame() {
         ansDiv.children[2].remove()
         ansDiv.children[0].innerHTML = 'Yes'
         ansDiv.children[1].innerHTML = 'No'
+        
         winSound.play()
         bgSound.play();
         // p1points = 0
