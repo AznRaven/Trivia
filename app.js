@@ -20,16 +20,6 @@ questions = [
         "answer": "D"
     },
     {
-        "question": "How do you select all elements of a specific type in CSS?",
-        "choices": [
-            "type",
-            "*type",
-            ".type",
-            "type"
-        ],
-        "answer": "A"
-    },
-    {
         "question": "How do you set the font family in CSS?",
         "choices": [
             "font: family;",
@@ -148,6 +138,16 @@ questions = [
             "@id"
         ],
         "answer": "B"
+    },
+    {
+        "question": "What is the CSS selector used to select an element based on its class?",
+        "choices": [
+            ".id",
+            "#id",
+            "id",
+            "@id"
+        ],
+        "answer": "A"
     },
     {
         "question": "What is the default value for the CSS display property?",
@@ -352,7 +352,9 @@ function sound(src) {
     this.sound.src = src;
     this.sound.setAttribute("preload", "auto");
     this.sound.setAttribute("controls", "true");
+    // this.sound.setAttribute("controls", "none");
     this.sound.volume = .1
+    // this.sounc.loop = true
     // this.sound.style.display = "none";
     document.body.appendChild(this.sound);
     this.play = function () {
@@ -379,7 +381,7 @@ function soundOnly(src) {
 }
 
 function startGame() {
-    var audio = document.getElementById("myAudio");
+    bgSound.play();
     if (questions.length == 1 && p1points > p2points) {
         // document.querySelector('.question').style.display = "none"
         winner.innerHTML = 'Player 1 Wins!!!'
@@ -389,6 +391,7 @@ function startGame() {
         ansDiv.children[1].innerHTML = 'No'
         nGame.style.display = "block"
         winSound.play()
+        bgSound.play();
         nGame.style.display = "block"
         // p1points = 0
         // p2points = 0
@@ -406,6 +409,7 @@ function startGame() {
         ansDiv.children[0].innerHTML = 'Yes'
         ansDiv.children[1].innerHTML = 'No'
         winSound.play()
+        bgSound.play();
         // p1points = 0
         // p2points = 0
         // p1p.innerHTML = 0
@@ -414,11 +418,11 @@ function startGame() {
         process.exit()
     }
     if (playerStart == 1) {
-        p1D.style.border = "5px solid green"
+        p1D.style.border = "5px solid #ff3a20"
         p2D.style.border = ""
     } else {
         p1D.style.border = ""
-        p2D.style.border = "5px solid green"
+        p2D.style.border = "5px solid #ff3a20"
     }
     index = Math.floor(Math.random() * questions.length)
 
@@ -497,6 +501,9 @@ var playerStart = Math.floor(Math.random(1) * 2) + 1
 
 // var audio = document.getElementById("myAudio");
 // audio.volume = 0.5; // set volume to 50%
+// bgSound.loop = true
+// audio.volume = .2
 bgSound.play();
 // nGame.style.display = "none"
+// hello
 startGame()
