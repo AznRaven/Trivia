@@ -2,7 +2,7 @@
 # AznRaven's Trivia: A CSS, JS, and HTML Game
 Welcome to AznRaven's Trivia, a two-player game where players can test their knowledge of CSS, JS, and HTML. The game features an intuitive design, randomized player turns, and a challenging set of questions to keep players engaged and learning.
 
-Github Pages [AznRaven's Trivia](https://aznraven.github.io/Trivia/)
+Github Pages [AznRaven's Trivia](https://aznraven.github.io/Trivia/) <== Click To Play
 ![AznRaven's Trivia](trivia.png)
 
 ## How to Play
